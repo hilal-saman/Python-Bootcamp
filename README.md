@@ -10,10 +10,18 @@ BFS algoritması en az aktarmalı rotayı hesaplamak için kullanılır. Bu algo
 
 #### BFS Algoritmasının Çalışma Adımları
 
-- Başlangıç istasyonundan hareket eder ve bir kuyruk oluşturur.
-- Her seferinde yeni istasyon seviyesini keşfeder.
-- Komşu istasyonlar ziyaret edilir ve işaretlenir.
-- Hedef istasyona ulaşıldığında o ana kadar gidilen rota döndürülür.
+1. Başlangıç veya hedef istasyon yoksa None döndür.
+2. BFS için bir kuyruk (deque) oluştur ve başlangıç istasyonunu içine ekle.
+3. Ziyaret edilen istasyonları takip etmek için bir set oluştur.
+4. BFS döngüsünü başlat:
+    - Kuyruktan bir istasyon al.
+    - Hedef istasyona ulaşıldıysa, izlenen rotayı döndür.
+    - Komşu istasyonları kontrol et:
+        - Daha önce ziyaret edilmediyse:
+            - Ziyaret edilenler setine ekle.
+            - Yeni rotayı oluştur.
+            - Kuyruğa ekle.
+5. Kuyruğa ekle.
 
 ### A* Algoritması
 
@@ -21,9 +29,20 @@ A* algoritması en hızlı rotayı bulmak için kullanılır. Bu algoritma her a
 
 #### A* Algoritmasının Çalışma Adımları
 
-- Öncelik kuyruğu oluşturur, en düşük süreye sahip olan rota her adımda genişletilir.
-- Hedef istasyona ulaşıldığında en hızlı rota ve toplam süre döndürülür.
-- Eğer hedefe ulaşılamazsa None döner.
+1. Başlangıç veya hedef istasyon yoksa None döndür.
+2. Öncelikli bir kuyruk (heapq) oluştur ve başlangıç istasyonunu ekle.
+3. Ziyaret edilen istasyonları takip etmek için bir set oluştur.
+4. A* döngüsünü başlat:
+    - Kuyruktan en düşük maliyetli istasyonu al.
+    - Hedefe ulaşıldıysa, izlenen rotayı ve toplam süreyi döndür.
+    - Komşu istasyonları kontrol et:
+        - Daha önce ziyaret edilmediyse:
+            - Yeni toplam süreyi hesapla.
+            - Ziyaret edilenler setine ekle.
+            - Yeni rotayı oluştur.
+            - Öncelik kuyruğuna ekle.
+
+5. Hiçbir rota bulunamazsa None döndür.
 
 ## Kullanılan Teknolojiler Ve Kütüphaneler
 
