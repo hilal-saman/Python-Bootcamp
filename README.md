@@ -21,8 +21,7 @@ BFS algoritması en az aktarmalı rotayı hesaplamak için kullanılır. Bu algo
             - Ziyaret edilenler setine ekle.
             - Yeni rotayı oluştur.
             - Kuyruğa ekle.
-5. Kuyruğa ekle.
-
+5. Hiçbir rota bulunamazsa None döndür.
 ### A* Algoritması
 
 A* algoritması en hızlı rotayı bulmak için kullanılır. Bu algoritma her adımda en düşük maliyete sahip rotayı genişletir.A* algoritması hem gidilen mesafeyi hem de hedefe olan mesafeyi dikkate alarak en kısa yolu bulur.
